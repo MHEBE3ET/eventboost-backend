@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { sequelize } from './config/database';
 import authRoutes from './routes/auth';
+import campaignRoutes from './routes/campaigns';
 
 // Load environment variables
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/campaigns', campaignRoutes);
 
 // Health check route
 app.get('/health', (req, res) => {
